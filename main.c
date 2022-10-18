@@ -4,14 +4,16 @@
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main(int argc, char *argv[]) {
-	int i;
+	int i = 10;
 	
-	for(i=0;i<5;i++)
-	{
-		int temp = 1;
-		printf("temp = %d\n", temp);
-		temp++;
-	 } 
-	 //temp에 대한 선언이 루프의 시작에 있어 temp = 1이 5번 출력  
-	return 0;
+	printf("함수 호출 전 i = %d\n", i); //처음 초기화 그대로 출력  
+	inc(i);
+	printf("함수 호출 후 i = %d\n", i); //함수 종료와 함께 매개변수 소멸   
+	
+	return 0; 
 } 
+int inc(int counter)
+{
+	counter++;
+	return counter;
+}
